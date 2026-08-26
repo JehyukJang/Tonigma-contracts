@@ -17,7 +17,9 @@ import {
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "../..");
 const DEFAULT_INTERNAL_OUTPUT_DIR = path.join(SCRIPT_DIR, "output");
-const PUBLIC_OUTPUT_DIR = path.join(REPO_ROOT, "docs/audit/monitoring/data");
+const PUBLIC_OUTPUT_DIR = process.env.TONIGMA_DOCS_MONITORING_OUTPUT_DIR
+  ? path.resolve(process.env.TONIGMA_DOCS_MONITORING_OUTPUT_DIR)
+  : path.resolve(REPO_ROOT, "../tonigma-docs/docs/monitoring/data");
 const DEFAULT_CHAIN_ID = 1;
 const DEFAULT_DAPP = "private-state";
 const DEFAULT_CHANNEL = "the-great-first-channel";
@@ -53,7 +55,7 @@ function printHelp() {
 Generates the data-backed Monitoring Packet files.
 
 Public packet output:
-  docs/audit/monitoring/data/
+  ../tonigma-docs/docs/monitoring/data/
 
 Internal validation output:
   scripts/monitoring-packet/output/*.json
@@ -1342,7 +1344,7 @@ function buildChannelPolicySnapshot({ args, artifacts, onchain }) {
     storageLayoutHash,
     storageLayoutHashAlgorithm: "keccak256(file bytes)",
     latestPolicyVersion,
-    policyExplanationSource: "docs/whitepaper.md#82-policy-surfaces",
+    policyExplanationSource: "https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md#82-policy-surfaces",
   };
 }
 
@@ -1358,7 +1360,7 @@ function buildObservabilityMatrix(eventCoverage) {
   return `# Private-State Observability Matrix
 
 This file maps the Monitoring Packet event checklist to the current public event surface. The policy
-meaning of this matrix is described in \`docs/whitepaper.md\`; this file records
+meaning of this matrix is described in \`https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md\`; this file records
 the current ABI-derived monitoring details.
 
 ${markdownTable([
@@ -1407,7 +1409,7 @@ function buildAdminPolicy({ pack }) {
 
 This file records the current on-chain owner and proxy-slot state for the monitored mainnet bridge
 deployment. The external policy model for upgrades and per-channel immutability is described in
-\`docs/whitepaper.md\`.
+\`https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md\`.
 
 ## Owners
 

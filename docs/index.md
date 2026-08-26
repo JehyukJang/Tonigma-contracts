@@ -17,7 +17,7 @@ its folder.
 
 ## Main Document
 
-- [Tokamak Private App Channels White Paper](whitepaper.md)
+- [Tokamak Private App Channels White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md)
   - Public narrative for the bridge model, DApp/channel policy surface, custody boundary, privacy
     model, security posture, and current operational policy.
 
@@ -35,7 +35,7 @@ its folder.
 
 ## Audit And Monitoring Documents
 
-- [Monitoring Packet](audit/monitoring/Monitoring-Packet.md)
+- [Monitoring Packet](https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/monitoring/Monitoring-Packet.md)
   - Data-backed public monitoring packet for contract addresses, public event surfaces, channel
     policy data, admin wallets, and user-controlled evidence boundaries.
 - [Mainnet Deployment Audit Checklist](audit/mainnet-deploy/audit-for-mainnet-deploy.md)

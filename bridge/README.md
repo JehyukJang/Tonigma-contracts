@@ -3,13 +3,13 @@
 This folder contains a standalone bridge-contract implementation. Start with:
 
 - `../docs/index.md`
-- `../docs/whitepaper.md`
+- `https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md`
 - `../docs/bridge/gas-assessment.md`
 - `bridge/CHANGELOG.md`
 
 The public whitepaper URL is:
 
-- https://github.com/tokamak-network/Tokamak-zk-EVM-contracts/blob/main/docs/whitepaper.md
+- https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/whitepaper.md
 
 The existing bridge implementation under the repository `src` directory was intentionally not referenced or reused.
 

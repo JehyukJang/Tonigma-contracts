@@ -41,7 +41,6 @@ const runtimePath = path.join(cliRoot, "lib", "runtime.mjs");
 const e2eCliPath = path.resolve(cliRoot, "..", "scripts", "e2e", "run-bridge-private-state-cli-e2e.mjs");
 const agentsPath = path.join(cliRoot, "agents.md");
 const readmePath = path.join(cliRoot, "README.md");
-const publicTermsPath = path.resolve(cliRoot, "../../../../docs/dapps/private-state/terms.md");
 const TEST_RPC_CONFIG = Object.freeze({
   provider: "ankr",
   rpcUrl: "https://example.invalid",
@@ -212,17 +211,15 @@ function readAgentRefs() {
 
 function testCanonicalTermsAssetMatchesPublicTerms() {
   const packagedTerms = readPrivateStateTermsText();
-  const publicTerms = fs.readFileSync(publicTermsPath, "utf8");
   const metadata = readPrivateStateTermsMetadata();
 
-  expect(packagedTerms === publicTerms, "Packaged canonical Terms must match docs/dapps/private-state/terms.md.");
   expect(metadata.termsVersion === "2026-06-12", "Unexpected canonical Terms version.");
   expect(
     /^sha256:[0-9a-f]{64}$/u.test(metadata.termsHash),
     `Unexpected canonical Terms hash format: ${metadata.termsHash}`,
   );
   expect(metadata.termsPackagePath === "assets/service-terms.md", "Unexpected packaged Terms path.");
-  expect(metadata.termsPublicPath === "docs/dapps/private-state/terms.md", "Unexpected public Terms path.");
+  expect(metadata.termsPublicPath === "https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md", "Unexpected public Terms URL.");
   expect(metadata.termsContentBytes === Buffer.byteLength(packagedTerms, "utf8"), "Terms byte length mismatch.");
 }
 
@@ -336,7 +333,7 @@ function assertAgentGuidance(payload, expectedRefs) {
   expect(typeof payload.agentGuidance.step === "string", "agentGuidance.step must be present.");
   expect(Array.isArray(payload.agentGuidance.refs), "agentGuidance.refs must be an array.");
   expect(
-    payload.agentGuidance.termsSource === "docs/dapps/private-state/terms.md",
+    payload.agentGuidance.termsSource === "https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md",
     "agentGuidance.termsSource must point to the Terms document.",
   );
   expect(Array.isArray(payload.agentGuidance.termsRefs), "agentGuidance.termsRefs must be an array.");
