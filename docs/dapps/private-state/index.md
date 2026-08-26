@@ -100,10 +100,10 @@ accepting that policy for the channel lifetime.
 6. [Channel Workspace Mirror Protocol](channel-workspace-mirror-protocol.md)
    Defines the optional static server protocol that channel leaders can use to publish signed
    workspace checkpoints and delta bundles for old channels.
-7. [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md)
+7. [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md)
    Defines the Service scope, user responsibilities, Self-Custody duties, public Ethereum mainnet
    records, risk disclosures, liability limits, Third-Party Services, and dispute provisions.
-8. [Tonigma Privacy Notice](https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/privacy-notice.md)
+8. [Tonigma Privacy Notice](https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/privacy-notice.md)
    Explains Service data processing, public blockchain records, Channel-scoped observer and mirror processing,
    third-party services, retention, user choices, and the Provider privacy contact.
 

@@ -8,11 +8,11 @@ The full private-state DApp documentation is published with the repository:
 
 The Service Privacy Notice is published in the repository:
 
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/privacy-notice.md
+- https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/privacy-notice.md
 
 The Service Terms of Service are published in the repository:
 
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md
+- https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md
 
 ## Terminology And Exchange Boundary
 

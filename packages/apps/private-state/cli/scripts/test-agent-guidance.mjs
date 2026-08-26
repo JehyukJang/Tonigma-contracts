@@ -219,7 +219,7 @@ function testCanonicalTermsAssetMatchesPublicTerms() {
     `Unexpected canonical Terms hash format: ${metadata.termsHash}`,
   );
   expect(metadata.termsPackagePath === "assets/service-terms.md", "Unexpected packaged Terms path.");
-  expect(metadata.termsPublicPath === "https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md", "Unexpected public Terms URL.");
+  expect(metadata.termsPublicPath === "https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md", "Unexpected public Terms URL.");
   expect(metadata.termsContentBytes === Buffer.byteLength(packagedTerms, "utf8"), "Terms byte length mismatch.");
 }
 
@@ -333,7 +333,7 @@ function assertAgentGuidance(payload, expectedRefs) {
   expect(typeof payload.agentGuidance.step === "string", "agentGuidance.step must be present.");
   expect(Array.isArray(payload.agentGuidance.refs), "agentGuidance.refs must be an array.");
   expect(
-    payload.agentGuidance.termsSource === "https://github.com/JehyukJang/Tonigma-docs/blob/main/docs/legal/terms.md",
+    payload.agentGuidance.termsSource === "https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md",
     "agentGuidance.termsSource must point to the Terms document.",
   );
   expect(Array.isArray(payload.agentGuidance.termsRefs), "agentGuidance.termsRefs must be an array.");
