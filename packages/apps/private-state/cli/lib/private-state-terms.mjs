@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 export const PRIVATE_STATE_TERMS_VERSION = "2026-06-12";
 export const PRIVATE_STATE_TERMS_HASH_ALGORITHM = "sha256";
 export const PRIVATE_STATE_TERMS_PACKAGE_PATH = "assets/service-terms.md";
-export const PRIVATE_STATE_TERMS_PUBLIC_PATH = "https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md";
+export const PRIVATE_STATE_TERMS_PUBLIC_PATH = "https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md";
 
 const privateStateCliPackageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const privateStateTermsAssetPath = path.join(privateStateCliPackageRoot, PRIVATE_STATE_TERMS_PACKAGE_PATH);

@@ -95,21 +95,21 @@ accepting that policy for the channel lifetime.
    Documents bridge-inherited security assumptions, finite leaf collision risk, future nullifier
    collision probability, separated wallet capabilities, channel-bound Tonigma private application
    state derivation, note-receive key derivation, and recovery behavior.
-5. [Private-State Workflow](workflow.md)
+5. [Private-State Workflow](../../dapps/private-state/workflow.md)
    Describes the CLI workflow, wallet/workspace artifacts, bridge registration metadata, proof input bundle format, event recovery flow, and bridge-DApp execution coupling.
 6. [Channel Workspace Mirror Protocol](channel-workspace-mirror-protocol.md)
    Defines the optional static server protocol that channel leaders can use to publish signed
    workspace checkpoints and delta bundles for old channels.
-7. [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md)
+7. [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md)
    Defines the Service scope, user responsibilities, Self-Custody duties, public Ethereum mainnet
    records, risk disclosures, liability limits, Third-Party Services, and dispute provisions.
-8. [Tonigma Privacy Notice](https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/privacy-notice.md)
+8. [Tonigma Privacy Notice](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/privacy-notice.md)
    Explains Service data processing, public blockchain records, Channel-scoped observer and mirror processing,
    third-party services, retention, user choices, and the Provider privacy contact.
 
 The intended reading path moves from concepts, to contracts, to per-function constraints, to
 security assumptions, and finally to end-to-end workflow. A reader who only needs operational
-sequence can read [Workflow](workflow.md) after the first three sections of
+sequence can read [Workflow](../../dapps/private-state/workflow.md) after the first three sections of
 [Background Theory](background-theory.md), but security-sensitive operation requires the full set.
 
 ## Scope

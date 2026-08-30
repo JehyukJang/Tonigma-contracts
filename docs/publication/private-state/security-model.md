@@ -151,7 +151,7 @@ $$
 
 The graph below uses `lambda = 1/minute`, so `mu(t) = 1440t` when `t` is measured in days.
 
-![General channel lifespan leaf collision probability](../../assets/general_leaf_collision_probability_lifespan_days_lambda1m_d12_36_step6.svg)
+![General channel lifespan leaf collision probability](https://raw.githubusercontent.com/JehyukJang/Tonigma-docs/main/publication/project-wide-policy/assets/general_leaf_collision_probability_lifespan_days_lambda1m_d12_36_step6.svg)
 
 For the current `d = 36` setting, this model gives a materially longer but still finite
 channel-lifespan capacity limit. It is not a statement that any particular note is likely to fail
@@ -252,7 +252,7 @@ $$
 \mathbb{E}[T] = \frac{2^d}{\lambda}
 $$
 
-![Future nullifier collision probability](assets/future_nullifier_collision_probability_days_lambda1m_d12_36_step6_logy.svg)
+![Future nullifier collision probability](../../dapps/private-state/assets/future_nullifier_collision_probability_days_lambda1m_d12_36_step6_logy.svg)
 
 This risk is lower than the general channel-wide probability of any leaf collision because it tracks
 one fixed target leaf, not any pair among all occupied leaves. It is still security-relevant because

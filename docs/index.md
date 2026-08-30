@@ -17,26 +17,26 @@ its folder.
 
 ## Main Document
 
-- [Tokamak Private App Channels White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/whitepaper.md)
+- [Tokamak Private App Channels White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/whitepaper.md)
   - Public narrative for the bridge model, DApp/channel policy surface, custody boundary, privacy
     model, security posture, and current operational policy.
 
 ## Bridge Documents
 
-- [Bridge Documentation](bridge/index.md)
+- [Bridge Documentation](publication/bridge/index.md)
   - Public bridge component documentation hub. It currently links to the bridge gas assessment and
     can be extended as additional bridge public documents are added.
 
 ## DApp Documents
 
-- [Private-State DApp Documentation](dapps/private-state/index.md)
+- [Private-State DApp Documentation](publication/private-state/index.md)
   - Reading order for the private-state DApp protocol, contract specification, function
     constraints, security model, workflow, and channel workspace mirror protocol.
 
 ## Audit And Monitoring Documents
 
-- [Monitoring Packet](https://github.com/JehyukJang/Tonigma-docs/blob/main/monitoring/Monitoring-Packet.md)
+- [Monitoring Packet](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/monitoring/Monitoring-Packet.md)
   - Data-backed public monitoring packet for contract addresses, public event surfaces, channel
     policy data, admin wallets, and user-controlled evidence boundaries.
-- [Mainnet Deployment Audit Checklist](audit/mainnet-deploy/audit-for-mainnet-deploy.md)
+- [Mainnet Deployment Audit Checklist](publication/audit/mainnet-deploy/audit-for-mainnet-deploy.md)
   - Consolidated mainnet deployment security checklist and current deployment review status.

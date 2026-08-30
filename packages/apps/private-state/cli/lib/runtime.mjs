@@ -5412,7 +5412,7 @@ function guideAgentGuidance(step, refs) {
     source: "agents.md",
     step,
     refs: [...new Set([...refs, "E.3"])],
-    termsSource: "https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md",
+    termsSource: "https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md",
     termsRefs: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "18", "20"],
   };
 }

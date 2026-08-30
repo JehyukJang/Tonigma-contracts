@@ -57,10 +57,10 @@ not public by default and are not reconstructed by Tokamak on a user's behalf.
 Tokamak does not hold a master viewing key, user spending key, viewing secret, or wallet secret for
 the private-state DApp.
 
-For the detailed public/private boundary, read the [Tonigma White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/whitepaper.md). For
+For the detailed public/private boundary, read the [Tonigma White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/whitepaper.md). For
 monitoring, contract addresses, admin wallets, upgrade policy, and incident-response materials, use
 the [public documentation index](./docs/index.md) and the
-[Monitoring Packet](https://github.com/JehyukJang/Tonigma-docs/blob/main/monitoring/Monitoring-Packet.md).
+[Monitoring Packet](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/monitoring/Monitoring-Packet.md).
 
 ## What Is In This Repository
 
@@ -76,7 +76,7 @@ the [public documentation index](./docs/index.md) and the
 
 - Bridge overview: [bridge/README.md](./bridge/README.md)
 - Public documentation index: [docs/index.md](./docs/index.md)
-- Bridge white paper: [Tonigma White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/whitepaper.md)
+- Bridge white paper: [Tonigma White Paper](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/whitepaper.md)
 - Bridge developer references: [bridge/docs/dev/](./bridge/docs/dev/)
 - App workspace guide: [packages/apps/README.md](./packages/apps/README.md)
 - Private-state DApp guide: [packages/apps/private-state/README.md](./packages/apps/private-state/README.md)
@@ -228,7 +228,7 @@ The private-state DApp is the reference app integration for the bridge. It conta
 - DApp contracts under [packages/apps/private-state/src/](./packages/apps/private-state/src/)
 - bridge-coupled CLI tooling under [packages/apps/private-state/cli/](./packages/apps/private-state/cli/)
 - app deployment and registration scripts that publish artifacts to Google Drive
-- protocol and security documents under [docs/dapps/private-state/](./docs/dapps/private-state/)
+- protocol and security documents under [docs/publication/private-state/](./docs/publication/private-state/)
 
 ### Tokamak Verifier Artifacts
 

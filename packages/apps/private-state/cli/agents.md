@@ -943,7 +943,7 @@ Failure recovery: if the user has not reviewed or accepted required Terms, stop 
 CLI flow. Do not continue through JSON mode.
 
 Optional explanation: `agentGuidance.termsRefs` contains Terms section numbers, not the full legal text. Read those
-sections from the [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md) before advising the user.
+sections from the [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md) before advising the user.
 
 ## F. Recovery Rules
 

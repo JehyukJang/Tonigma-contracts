@@ -4,15 +4,15 @@ Command-line client for the Tokamak private-state DApp.
 
 The full private-state DApp documentation is published with the repository:
 
-- https://github.com/tokamak-network/Tokamak-zk-EVM-contracts/tree/main/docs/dapps/private-state
+- https://github.com/JehyukJang/Tonigma-contracts/tree/main/docs/publication/private-state
 
 The Service Privacy Notice is published in the repository:
 
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/privacy-notice.md
+- https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/privacy-notice.md
 
 The Service Terms of Service are published in the repository:
 
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/legal/terms.md
+- https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md
 
 ## Terminology And Exchange Boundary
 
@@ -343,7 +343,7 @@ already exists. The channel leader can build the static mirror files with
 recovering the channel workspace, and then deploy the output directory to the registered mirror host.
 If the existing mirror manifest is unreadable or invalid, add `--force` to write a full checkpoint
 without trusting that remote manifest as a delta base. The CLI protocol is documented at
-https://github.com/tokamak-network/Tokamak-zk-EVM-contracts/blob/main/docs/dapps/private-state/channel-workspace-mirror-protocol.md.
+https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/channel-workspace-mirror-protocol.md.
 
 Channel public observer URLs are also Channel-scoped. The CLI does not use a Tonigma-wide observer URL. To open a
 Channel's public observer, read the URL registered in that Channel's on-chain metadata:

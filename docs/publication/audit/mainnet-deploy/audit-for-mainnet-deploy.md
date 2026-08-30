@@ -339,7 +339,7 @@ Evidence:
   `bridge/scripts/admin-add-dapp.mjs`,
   `packages/apps/private-state/cli/commands/channel.mjs`, and
   `packages/apps/private-state/cli/lib/runtime.mjs`.
-- Gas documentation: `docs/bridge/gas-assessment.md` records current `createChannel` full-path gas
+- Gas documentation: `docs/publication/bridge/gas-assessment.md` records current `createChannel` full-path gas
   as `2,731,811`, down from the earlier `3,884,651` deep-copy design measurement.
 
 Security note: calldata-supplied function metadata is not trusted unless it proves against the
@@ -556,7 +556,7 @@ why finite leaf projection creates a channel-lifespan capacity limit rather than
 static-set risk, even after the depth increase materially reduces the practical collision rate. The
 graph uses a logarithmic probability axis so low-probability early-lifespan regions remain visible.
 
-![General channel lifespan leaf collision probability by operating period and depth](../../assets/general_leaf_collision_probability_lifespan_days_lambda1m_d12_36_step6.svg)
+![General channel lifespan leaf collision probability by operating period and depth](https://raw.githubusercontent.com/JehyukJang/Tonigma-docs/main/publication/project-wide-policy/assets/general_leaf_collision_probability_lifespan_days_lambda1m_d12_36_step6.svg)
 
 Evidence:
 
