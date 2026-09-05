@@ -1,5 +1,7 @@
 # Private-State Contract Specification
 
+Last updated: 2026-09-05
+
 ## 1. Contract Set
 
 The `private-state` DApp is implemented with two storage contracts:

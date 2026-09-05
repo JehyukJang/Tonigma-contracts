@@ -1,5 +1,7 @@
 # Private-State Function Constraints
 
+Last updated: 2026-09-05
+
 This document lists the constraints that each user-facing function family must satisfy.
 
 The goal is to explain both the rule and the reason for the rule. In this DApp, a valid Solidity

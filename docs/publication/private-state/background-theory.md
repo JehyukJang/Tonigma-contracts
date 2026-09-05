@@ -1,5 +1,7 @@
 # Private-State Background Theory
 
+Last updated: 2026-09-05
+
 ## 1. System Model
 
 `private-state` is a bridge-coupled zk-note payment DApp for the Tokamak Network Token.

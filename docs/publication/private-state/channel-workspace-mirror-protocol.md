@@ -1,5 +1,7 @@
 # Channel Workspace Mirror Protocol
 
+Last updated: 2026-09-05
+
 Channel workspace mirrors are optional bootstrap caches operated by channel leaders. They reduce the
 cost of joining or recovering an old channel by serving a leader-signed checkpoint and, when the user
 already has a local workspace, only the delta from the local recovery index to that checkpoint. The

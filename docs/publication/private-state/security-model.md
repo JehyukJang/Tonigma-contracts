@@ -1,5 +1,7 @@
 # Private-State Security Model
 
+Last updated: 2026-09-05
+
 This document describes the security model for the `private-state` DApp. It includes the bridge
 security assumptions inherited by the DApp, the local CLI security model, and the note-specific
 risks that follow from finite leaf projection.

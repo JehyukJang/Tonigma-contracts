@@ -1,5 +1,7 @@
 # Private-State DApp Documentation
 
+Last updated: 2026-09-05
+
 This directory contains the design, protocol, security, and implementation documents for the `private-state` DApp.
 
 ## Quick Answers

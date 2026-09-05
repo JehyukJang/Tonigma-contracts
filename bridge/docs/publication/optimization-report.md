@@ -1,5 +1,7 @@
 # Optimization Report
 
+Last updated: 2026-09-05
+
 ## Source Series (gas usage by snapshot commit)
 | date | commits | change summary | gas usage | mini-report |
 |---|---|---|---:|---|

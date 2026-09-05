@@ -1,5 +1,7 @@
 # Mainnet Deployment Security Audit
 
+Last updated: 2026-09-05
+
 Date: 2026-05-02
 Reviewed through: `73f214f` (`Make channel creation permissionless`)
 Branch: `bridge-mainnet-audit-second`
