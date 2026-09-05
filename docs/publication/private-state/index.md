@@ -28,10 +28,10 @@ state, not exchange-supported deposit assets.
 
 ### Who controls disclosure in the private-state DApp?
 
-The `private-state` DApp uses a user-controlled disclosure model. The Provider, Tokamak Network PTE. LTD., bridge
-operators, Channel Providers, and channel leaders are not designed to hold the user's spending key, viewing key, or a
-master viewing key. A user may selectively disclose evidence from local wallet state through Service tooling, but public
-logs alone are not meant to reconstruct every private note provenance chain.
+The `private-state` DApp uses a user-controlled disclosure model. Public-chain data, bridge
+contracts, Channel metadata, and monitoring outputs do not contain the user's spending key, viewing key, or a master
+viewing key. A user may selectively disclose evidence from local wallet state, but public logs alone do not reconstruct
+every private note provenance chain.
 
 ### How are wallet backups different from wallet keys?
 
@@ -52,8 +52,8 @@ The public description of the DApp uses the following concepts:
   transparent Ethereum mainnet surface.
 - `user-controlled private note state`: note ownership and note recovery depend on user-held local
   secrets.
-- `selective disclosure capable architecture`: disclosure is user-controlled where Service
-  wallet tooling supports selected evidence export.
+- `selective disclosure capable architecture`: disclosure is user-controlled when local wallet
+  tooling produces selected evidence export.
 - `privacy-preserving DApp channel`: this is an opt-in DApp channel, not an exchange
   deposit network and not a change to TON's Ethereum mainnet transfer rules.
 - `TON custody remains anchored on Ethereum mainnet`: the canonical token stays under the bridge's Ethereum mainnet
@@ -63,9 +63,9 @@ The public description of the DApp uses the following concepts:
 
 ## Audience Guide
 
-- Ordinary users should read the Quick Answers, Terms, Privacy Notice, and Workflow sections that
+- Ordinary users should read the Quick Answers, Privacy And Disclosure System Policy, and Workflow sections that
   describe self-custody, public blockchain records, backups, and recovery.
-- Legal, compliance, exchange, and investigator readers should read the Terms, Privacy Notice,
+- Exchange and independent-review readers should read the Privacy And Disclosure System Policy,
   Monitoring Packet, and user-controlled evidence documentation.
 - Auditors and protocol reviewers should read the Background Theory, Contract Specification,
   Function Constraints, Security Model, and Workflow documents.
@@ -100,12 +100,9 @@ accepting that policy for the channel lifetime.
 6. [Channel Workspace Mirror Protocol](channel-workspace-mirror-protocol.md)
    Defines the optional static server protocol that channel leaders can use to publish signed
    workspace checkpoints and delta bundles for old channels.
-7. [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md)
-   Defines the Service scope, user responsibilities, Self-Custody duties, public Ethereum mainnet
-   records, risk disclosures, liability limits, Third-Party Services, and dispute provisions.
-8. [Tonigma Privacy Notice](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/privacy-notice.md)
-   Explains Service data processing, public blockchain records, Channel-scoped observer and mirror processing,
-   third-party services, retention, user choices, and the Provider privacy contact.
+7. [Tonigma Privacy And Disclosure System Policy](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/privacy-disclosure-system-policy.md)
+   Explains technical boundaries for public records, user-held material, selective disclosure, and
+   observer and workspace-mirror components.
 
 The intended reading path moves from concepts, to contracts, to per-function constraints, to
 security assumptions, and finally to end-to-end workflow. A reader who only needs operational

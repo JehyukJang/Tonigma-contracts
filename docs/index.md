@@ -6,8 +6,8 @@ its folder.
 
 ## Audience Guide
 
-- Users and legal or compliance reviewers should start with the private-state DApp index, Terms,
-  Privacy Notice, and Monitoring Packet.
+- Users and transparency reviewers should start with the private-state DApp index, Privacy And
+  Disclosure System Policy, and Monitoring Packet.
 - Auditors and protocol reviewers should read the white paper, bridge documents, private-state
   contract documents, and monitoring documents.
 - Operators and developers should use the package READMEs, bridge implementation notes, workflow

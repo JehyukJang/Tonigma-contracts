@@ -135,8 +135,8 @@
 
 ## 2.3.3 - 2026-05-27
 
-- Changed `help observer` and monitoring references to use the public observer URL
-  `https://observer.tonnel.io`.
+- Changed `help observer` and monitoring references to use the Channel-scoped observer metadata available at that
+  release.
 - Clarified CLI help, guide output, and README guidance so channel Join Tolls are paid directly
   from the Ethereum wallet, while `account deposit-bridge` is only for channel liquidity.
 - Clarified README and `help commands` guidance so AI agents answer user gas, fee, and USD cost

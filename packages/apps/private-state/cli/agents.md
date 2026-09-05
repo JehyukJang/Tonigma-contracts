@@ -9,10 +9,8 @@ private-state-cli help guide --json
 ```
 
 When the guide result contains `agentGuidance.source: "agents.md"`, read every item listed in `agentGuidance.refs`
-before telling the user what to do next. When the guide result contains `agentGuidance.termsSource` and
-`agentGuidance.termsRefs`, read the listed Terms sections as the legal and safety context for the next action. The
-indexed items below are written as action recipes: they prioritize the smallest safe user action over conceptual
-explanation.
+before telling the user what to do next. The indexed items below are written as action recipes: they prioritize the
+smallest safe user action over conceptual explanation.
 
 ## A. Operating Rules
 
@@ -68,9 +66,6 @@ private-state-cli secret create-private-key-source --output ./ethereum-private-k
 private-state-cli secret create-wallet-secret-source --output ./wallet-secret.txt
 ```
 
-Precondition: these networkless helper commands require current Service Terms acceptance before they run. If the CLI
-reports `TERMS_ACCEPTANCE_REQUIRED`, direct the user to complete the interactive Terms flow themselves.
-
 Success check: the helper reports `secretPrinted: false` and an `outputPath`.
 
 Failure recovery: if masked input is unavailable, tell the user to run the helper directly in an interactive terminal.
@@ -118,9 +113,6 @@ Minimal user actions: run one helper command in an interactive terminal and type
 AI may ask: whether to use the default path `./ethereum-private-key.txt` or an existing custom local path.
 
 AI must not ask: private key contents, seed phrase, wallet password, or screenshots showing the exported key.
-
-Precondition: this networkless helper requires current Service Terms acceptance before it runs. If the CLI reports
-`TERMS_ACCEPTANCE_REQUIRED`, direct the user to complete the interactive Terms flow themselves.
 
 Command template:
 
@@ -204,9 +196,6 @@ AI may ask: whether to use the default path `./wallet-secret.txt` or an existing
 
 AI must not ask: wallet secret contents, Ethereum private key contents, seed phrase, password/passphrase contents, or
 screenshots showing secrets.
-
-Precondition: this networkless helper requires current Service Terms acceptance before it runs. If the CLI reports
-`TERMS_ACCEPTANCE_REQUIRED`, direct the user to complete the interactive Terms flow themselves.
 
 Command template:
 
@@ -889,7 +878,7 @@ confirmation flags.
 
 Success check: the user runs the command directly after reviewing the warning summary.
 
-Failure recovery: if the user is not ready to continue, stop. Do not accept Terms, confirm destructive prompts, or submit
+Failure recovery: if the user is not ready to continue, stop. Do not confirm destructive prompts or submit
 confirmation text for the user.
 
 Optional explanation: warning summaries may cover public events, fund movement, Channel policy, sensitive exports, or
@@ -919,31 +908,6 @@ Failure recovery: if any policy field is unexpected, stop and do not join or cre
 
 Optional explanation: channel policy is immutable after creation or acceptance; later fixes require a new channel or
 migration.
-
-### E.3 Terms and safety context
-
-Goal: ensure the user receives the legal and safety context that applies to the next action.
-
-When to use: every `help guide --json` result that includes `agentGuidance.termsRefs`.
-
-Minimal user actions: read the short explanation and decide whether to continue.
-
-AI may ask: whether the user wants a plain-language summary of the referenced Terms sections.
-
-AI must not ask: the user to accept Terms through JSON mode, delegate Terms acceptance, share secrets, or waive future
-warnings.
-
-Command template: no command is required by this item alone.
-
-Success check: before suggesting the next command, explain the relevant public/private boundary, prohibited-use limits,
-Self-Custody, no recovery method, Third-Party Service risk, no professional advice, no warranties, liability limits,
-public observer limits, and the rule that User-Controlled AI Agents cannot accept Terms or confirmations.
-
-Failure recovery: if the user has not reviewed or accepted required Terms, stop and direct the user to the interactive
-CLI flow. Do not continue through JSON mode.
-
-Optional explanation: `agentGuidance.termsRefs` contains Terms section numbers, not the full legal text. Read those
-sections from the [Tonigma Terms of Service](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md) before advising the user.
 
 ## F. Recovery Rules
 

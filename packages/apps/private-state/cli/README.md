@@ -6,13 +6,8 @@ The full private-state DApp documentation is published with the repository:
 
 - https://github.com/JehyukJang/Tonigma-contracts/tree/main/docs/publication/private-state
 
-The Service Privacy Notice is published in the repository:
-
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/privacy-notice.md
-
-The Service Terms of Service are published in the repository:
-
-- https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/legal/terms.md
+The technical privacy and disclosure boundaries are documented in the
+[Tonigma Privacy And Disclosure System Policy](https://github.com/JehyukJang/Tonigma-docs/blob/main/publication/project-wide-policy/privacy-disclosure-system-policy.md).
 
 ## Terminology And Exchange Boundary
 
@@ -27,14 +22,13 @@ This npm README uses the same terminology as the repository README:
 - `private-state note`: a channel-local application note, not an exchange-supported token or deposit asset.
 - `Join Toll`: the one-time Channel entry fee paid when a user joins a Channel.
 - `proof-backed confidential application state`: DApp state advanced by accepted proof-backed channel transitions.
-- `user-controlled selective disclosure`: optional user disclosure from local wallet state; the Provider and Tokamak Network PTE. LTD. do not hold a master viewing key.
+- `user-controlled selective disclosure`: optional user disclosure from local wallet state; public-chain data and monitoring outputs do not contain a master viewing key.
 - `viewing key`: the note-receive private key used to decrypt note-delivery events for the registered note-receive public key.
 - `spending key`: the channel-bound private application key used to authorize proof-backed note use.
 
 Tokamak Private App Channels are not an exchange deposit network. Exchange-facing token transfers and bridge
 entry or exit remain public Ethereum mainnet activity. Internal private-state note counterparty relationships and note
-provenance are not public by default and are not reconstructed by the Provider or Tokamak Network PTE. LTD. on a user's
-behalf.
+provenance are not public by default and are not reconstructed from public records alone.
 
 ## Address And Key-Safety Warnings
 
@@ -43,9 +37,6 @@ supported exchange assets. Always withdraw TON to a self-custody Ethereum wallet
 
 Bridge deposits and withdrawals are public Ethereum mainnet events. Internal note transfers are designed so public
 contract state does not automatically reconstruct the full note path.
-
-This CLI does not send your spending key, wallet secret, or private note plaintext to the Provider or Tokamak Network
-PTE. LTD.
 
 ## Browser Wallet L1 Signing
 
@@ -126,17 +117,8 @@ artifacts needed by transaction-sending channel commands:
 private-state-cli install
 ```
 
-`install` accepts optional `--network <NAME>` to install only that network's deployment artifacts. Mainnet install, and
-install without `--network`, opens a local browser page for the current Service Terms and requires explicit human
-acceptance before installation proceeds. Sepolia and anvil installs do not require Terms acceptance. The browser page is
-served from `127.0.0.1`, uses a one-time local token, and lets the user review the Terms in the browser. After browser
-acceptance succeeds, the CLI immediately prints that installation is starting before any long-running install work
-begins. Use `--terminal-terms` only when the local browser flow cannot be used for a Terms-gated install. The CLI package
-includes the canonical Terms Markdown and reports its `termsVersion` and deterministic `termsHash` in install results.
-JSON mode cannot accept Terms for the user. For Terms-gated installs, `private-state-cli install --json` reports that
-browser-based interactive installation is required and includes Terms references without installing artifacts.
-The acceptance record is stored in the user's local private-state CLI workspace and is not sent to the Provider by
-default.
+`install` accepts optional `--network <NAME>` to install only that network's deployment artifacts.
+Without a network selector, it follows the package's default artifact selection.
 
 By default, `install` resolves the latest `@tokamak-zk-evm/cli` from the npm registry and uses the bundled
 `@tokamak-private-dapps/groth16` dependency version selected by the installed private-state CLI package. To pin exact
@@ -209,8 +191,7 @@ Remove local private-state CLI data with:
 private-state-cli uninstall
 ```
 
-`uninstall` requires current Service Terms acceptance before the destructive confirmation prompt. It is intentionally
-interactive. By default, it deletes local workspaces, account secrets, wallet secret source files stored under the CLI
+`uninstall` is intentionally interactive and presents its destructive confirmation prompt before it deletes local data. By default, it deletes local workspaces, account secrets, wallet secret source files stored under the CLI
 root, installed private-state artifacts, the Groth16 workspace, the Tokamak zk-EVM runtime cache, and the global CLI npm
 package when npm reports that it is globally installed. It preserves wallet spending-key and viewing-key files under the
 CLI secret root.
@@ -250,9 +231,7 @@ plaintext evidence, or delete local data. These warnings explain whether the com
 events, whether it changes private-state note state, which addresses or amounts become public, which note facts are not
 public by default, illegal-use prohibitions, no-recovery limits, and Channel policy acceptance.
 
-Terms acceptance is handled at install and renewal time. Destructive commands and sensitive exports use interactive
-confirmation prompts. User-Controlled AI Agents must explain warnings to the user, but they must not accept Terms,
-confirm destructive actions, or handle secret material for the user.
+Destructive commands and sensitive exports use interactive confirmation prompts. User-Controlled AI Agents must explain warnings to the user, but they must not confirm destructive actions or handle secret material for the user.
 
 Static warning scope:
 
@@ -352,8 +331,10 @@ Channel's public observer, read the URL registered in that Channel's on-chain me
 private-state-cli help observer --channel-name <CHANNEL> --network mainnet
 ```
 
-If no observer URL is registered, ask the Channel Provider for the correct observer location. A static observer URL in
-documentation is only an example for a specific Channel and is not a default for every Channel.
+If no observer URL is registered, inspect the shared
+[Channel observer and workspace-mirror source repository](https://github.com/JehyukJang/channel-workspace-mirror).
+Channel metadata and deployment configuration remain Channel-specific; this documentation does not designate a
+default observer for every Channel.
 
 Back up a local wallet with:
 
@@ -361,8 +342,7 @@ Back up a local wallet with:
 private-state-cli wallet export backup --network mainnet --wallet <WALLET> --output ./wallet-backup.zip
 ```
 
-Mainnet backup export requires current Service Terms acceptance. Sepolia and anvil backup exports do not require Terms
-acceptance. The backup export stores note-tracking metadata and the channel workspace cache, but it does not include
+The backup export stores note-tracking metadata and the channel workspace cache, but it does not include
 spending keys, viewing keys, key derivation material, or plaintext note secrets. Note records in the backup keep
 commitments, nullifiers, and encrypted note payloads only; `owner`, `value`, and `salt` are excluded.
 Importing this backup restores encrypted tracking state and channel cache files, not wallet authority.
@@ -371,10 +351,7 @@ Importing this backup restores encrypted tracking state and channel cache files,
 private-state-cli wallet import backup --network mainnet --input ./wallet-backup.zip
 ```
 
-Mainnet imports, and imports without a network selector, require current Service Terms acceptance. Sepolia and anvil
-imports can pass `--network sepolia` or `--network anvil` to run without interactive Terms acceptance.
-
-Export viewing and spending authority separately:
+ Export viewing and spending authority separately:
 
 ```bash
 private-state-cli wallet export viewing-key --network mainnet --wallet <WALLET> --output ./wallet-viewing.key
@@ -506,9 +483,9 @@ private-state-cli wallet export backup --network mainnet --wallet <WALLET_NAME> 
 private-state-cli wallet import backup --network mainnet --input ./wallet-backup.zip
 ```
 
-The networkless `secret create-private-key-source` and `secret create-wallet-secret-source` helper commands require
-current Service Terms acceptance before they run. `secret create-private-key-source` prompts in the terminal with masked
-input and creates a local source file for `account import`. `account import` is the only supported way to bring an
+The networkless `secret create-private-key-source` and `secret create-wallet-secret-source` helper commands run locally.
+`secret create-private-key-source` prompts in the terminal with masked input and creates a local source file for
+`account import`. `account import` is the only supported way to bring an
 Ethereum signing key into the CLI: it reads `--private-key-file` once and stores a protected local account secret for
 later `--account` use. The source file does not need `0600` permissions. `secret create-wallet-secret-source` prompts in
 the terminal with masked input by default and creates a local wallet secret source file for `channel join`. Use
@@ -528,7 +505,7 @@ local account. Omitting `--account` opens the browser-wallet path and reports th
 line. The source file is secret text that the CLI reads once for channel-bound spending-key derivation. It is not
 persisted in the wallet workspace.
 
-After current Service Terms acceptance is recorded, create one before joining a channel:
+Create one before joining a channel:
 
 ```bash
 private-state-cli secret create-wallet-secret-source --output ./wallet-secret.txt
@@ -647,18 +624,14 @@ The JSON guide is the machine-readable entrypoint for deciding the next safe ins
 - `agentGuidance.source` identifies the instruction file, currently [`agents.md`](agents.md)
 - `agentGuidance.refs` lists the indexed items in that file that apply to the next step
 - `agentGuidance.step` is the symbolic guide step that selected those refs
-- `agentGuidance.termsSource` identifies the Terms document
-- `agentGuidance.termsRefs` lists the Terms sections the agent must read and explain for legal and safety context
 
 The purpose of `--json` mode is to let the user's AI agent guide the user through the smallest safe next action while
 preserving the user's informed consent. JSON output is an instruction surface for the user's tool. It is not permission
-for the tool to bypass human review, accept Terms, confirm destructive actions, confirm sensitive exports, or handle
-secret material. When a command reports required warnings, prohibitions, Terms, Channel policy, or Provider Party and
-Channel Operator disclaimers, the agent must explain those points to the user and must not accept Terms or confirmations
-on the user's behalf.
+for the tool to bypass human review, confirm destructive actions, confirm sensitive exports, or handle secret material.
+When a command reports required warnings or Channel policy, the agent must explain those points to the user and must not
+submit confirmations on the user's behalf.
 
-After reading the referenced `agents.md` items and Terms sections, translate the recipe into a short, safe instruction
-for the user.
+After reading the referenced `agents.md` items, translate the recipe into a short, safe instruction for the user.
 Do not ask users to paste raw private keys, wallet secrets, seed phrases, provider passwords, or provider dashboard
 access into a conversation or prompt. Use the CLI's local helper commands for secret source files.
 
@@ -671,10 +644,6 @@ When `--json` is used, the CLI follows one output contract for all commands:
 - command failures are one JSON object on stdout with `ok: false`
 - progress, warning, and informational events are JSON Lines on stderr
 - human-readable mode remains the default when `--json` is omitted
-- Terms-gated `install --json` reports that browser-based interactive Terms acceptance is required, includes Terms
-  references, and does not install artifacts
-- install results include canonical Terms metadata: `termsVersion`, `termsHash`, `termsHashAlgorithm`, and Terms source
-  paths
 
 Agents should parse stdout for the final result and may stream stderr JSONL events to explain progress to the user.
 
